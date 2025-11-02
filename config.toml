@@ -1,0 +1,10 @@
+base_url = "https://ujhhgtg.github.io/military-training-survival-guide/"
+compile_sass = true
+build_search_index = false
+theme = "duckquill"
+title = "Military Training Survival Guide"
+
+[markdown]
+highlight_code = true
+
+[extra]
