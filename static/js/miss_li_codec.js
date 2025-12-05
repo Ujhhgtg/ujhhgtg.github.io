@@ -120,7 +120,7 @@ function baseNToDecimal(baseNString, base) {
 
   if (baseNString.length % digitsPerByte !== 0) {
     throw new Error(
-      `Base N string length (${baseNString.length}) is not a multiple of the required digits per byte (${digitsPerByte}).`
+      `Base N string length (${baseNString.length}) is not a multiple of the required digits per byte (${digitsPerByte}).\nN 进制字符串长度 (${baseNString.length}) 不是每字节所需位数 (${digitsPerByte}) 的倍数.`
     );
   }
 
@@ -133,7 +133,9 @@ function baseNToDecimal(baseNString, base) {
     for (let j = chunk.length - 1; j >= 0; j--) {
       const digit = parseInt(chunk[j]);
       if (digit >= base || isNaN(digit)) {
-        throw new Error(`Invalid digit '${chunk[j]}' found for Base ${base}.`);
+        throw new Error(
+          `Invalid digit '${chunk[j]}' found for Base ${base}.\n在 ${base} 进制中发现无效数字 '${chunk[j]}'.`
+        );
       }
       decimalValue += digit * Math.pow(base, power);
       power++;
@@ -176,7 +178,7 @@ function missLiEncode() {
   const inputText = inputElement.value;
 
   if (!inputText) {
-    outputElement.value = "Error: Input text is empty.\n错误: 输入文本为空。";
+    outputElement.value = "Error: Input text is empty.\n错误: 输入文本为空.";
     return;
   }
 
@@ -217,7 +219,7 @@ function missLiDecode() {
   let inputText = inputElement.value;
 
   if (!inputText) {
-    outputElement.value = "Error: Input text is empty.\n错误: 输入文本为空。";
+    outputElement.value = "Error: Input text is empty.\n错误: 输入文本为空.";
     return;
   }
 
@@ -249,6 +251,6 @@ function missLiDecode() {
       e.message +
       " Check your input and dictionary and try again.\n解码错误: " +
       e.message +
-      "请检查您的输入和字典，然后重试。";
+      " 请检查您的输入和字典，然后重试。";
   }
 }
