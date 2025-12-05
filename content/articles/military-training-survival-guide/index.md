@@ -12,8 +12,6 @@ toc = true
 toc_sidebar = true
 +++
 
-# Military Training Survival Guide
-
 {% alert(tip=true) %}
 This guide will be continuously updated. Feel free to check back at any time for new content.
 {% end %}
