@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Ujhhgtg&#x27;s Site - School</title>
+      <link>https://ujhhgtg.github.io/</link>
+      <description></description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://ujhhgtg.github.io/tags/school/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Fri, 05 Dec 2025 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Ms. Li Codec</title>
+          <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
+          <author>Fey Xie</author>
+          <link>https://ujhhgtg.github.io/articles/miss-li-codec/</link>
+          <guid>https://ujhhgtg.github.io/articles/miss-li-codec/</guid>
+          <description xml:base="https://ujhhgtg.github.io/articles/miss-li-codec/">&lt;div id=&quot;miss-li-codec-container&quot;&gt;
+  &lt;h2&gt;Ms. Li Codec | Ms. Li 编解码器&lt;&#x2F;h2&gt;
+
+  &lt;div style=&quot;margin-bottom: 15px&quot;&gt;
+    &lt;p&gt;
+      &lt;strong&gt;1. Select Dictionary Words (Base) 选择字典词语 (进制):&lt;&#x2F;strong&gt;
+    &lt;&#x2F;p&gt;
+    &lt;div id=&quot;dictionary-selection&quot;&gt;
+      &lt;label
+        &gt;&lt;input type=&quot;checkbox&quot; name=&quot;dict-word&quot; value=&quot;redo&quot; checked &#x2F;&gt;
+        redo&lt;&#x2F;label
+      &gt;
+      &lt;label
+        &gt;&lt;input type=&quot;checkbox&quot; name=&quot;dict-word&quot; value=&quot;bonus&quot; checked &#x2F;&gt;
+        bonus&lt;&#x2F;label
+      &gt;
+      &lt;label
+        &gt;&lt;input type=&quot;checkbox&quot; name=&quot;dict-word&quot; value=&quot;sit-down&quot; &#x2F;&gt;
+        sit-down&lt;&#x2F;label
+      &gt;
+      &lt;label
+        &gt;&lt;input type=&quot;checkbox&quot; name=&quot;dict-word&quot; value=&quot;stand-up&quot; &#x2F;&gt;
+        stand-up&lt;&#x2F;label
+      &gt;
+      &lt;label
+        &gt;&lt;input type=&quot;checkbox&quot; name=&quot;dict-word&quot; value=&quot;schedule&quot; &#x2F;&gt;
+        schedule&lt;&#x2F;label
+      &gt;
+      &lt;label
+        &gt;&lt;input type=&quot;checkbox&quot; name=&quot;dict-word&quot; value=&quot;杨牧ger~&quot; &#x2F;&gt;
+        杨牧ger~&lt;&#x2F;label
+      &gt;
+    &lt;&#x2F;div&gt;
+
+    &lt;div id=&quot;custom-dictionary-inputs&quot; style=&quot;margin-top: 10px&quot;&gt;
+      &lt;button
+        onclick=&quot;addCustomWordInput()&quot;
+        style=&quot;padding: 5px 10px; font-size: 0.9em; margin-top: 5px&quot;
+      &gt;
+        + Add Custom Word 添加自定义词语
+      &lt;&#x2F;button&gt;
+    &lt;&#x2F;div&gt;
+
+    &lt;p style=&quot;margin-top: 5px; font-size: 0.9em&quot;&gt;
+      Selected Base | 已选中的进制: &lt;strong id=&quot;current-base&quot;&gt;2&lt;&#x2F;strong&gt;
+    &lt;&#x2F;p&gt;
+  &lt;&#x2F;div&gt;
+
+  &lt;p&gt;&lt;strong for=&quot;miss-li-input&quot;&gt;2. Input 输入:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+  &lt;textarea
+    id=&quot;miss-li-input&quot;
+    rows=&quot;5&quot;
+    placeholder=&quot;Enter text to encode (e.g., &#x27;Hello&#x27;) or word sequence to decode. 输入要编码的文本 (例如 &#x27;Hello&#x27;) 或要解码的词语序列.&quot;
+  &gt;&lt;&#x2F;textarea&gt;
+
+  &lt;div style=&quot;margin-top: 10px; margin-bottom: 10px&quot;&gt;
+    &lt;button onclick=&quot;missLiEncode()&quot;&gt;Encode 编码&lt;&#x2F;button&gt;
+    &lt;button onclick=&quot;missLiDecode()&quot;&gt;Decode 解码&lt;&#x2F;button&gt;
+  &lt;&#x2F;div&gt;
+
+  &lt;p&gt;&lt;strong for=&quot;miss-li-output&quot;&gt;3. Output 输出:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+
+  &lt;textarea
+    id=&quot;miss-li-output&quot;
+    rows=&quot;5&quot;
+    readonly
+    placeholder=&quot;Result will appear here 结果将在此显示&quot;
+  &gt;&lt;&#x2F;textarea&gt;
+&lt;&#x2F;div&gt;
+
+&lt;script src=&quot;https:&#x2F;&#x2F;ujhhgtg.github.io&#x2F;js&#x2F;miss_li_codec.js&quot;&gt;&lt;&#x2F;script&gt;
+
+&lt;style&gt;
+  #miss-li-codec-container {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #1a1a1a;
+  }
+  #custom-dictionary-inputs input[type=&quot;text&quot;] {
+    width: 75%;
+    box-sizing: border-box;
+    background-color: white;
+    color: #1a1a1a;
+  }
+  #miss-li-codec-container textarea {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    color: #1a1a1a;
+  }
+  #miss-li-codec-container button {
+    padding: 8px 15px;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+  #custom-dictionary-inputs button {
+    margin-left: 5px;
+    padding: 3px 6px;
+    border: none;
+    background-color: #f44336;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    #miss-li-codec-container {
+      background-color: #2c2c2c;
+      color: #e0e0e0;
+      border-color: #444;
+    }
+    #custom-dictionary-inputs input[type=&quot;text&quot;] {
+      width: 75%;
+      box-sizing: border-box;
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+    }
+    #miss-li-codec-container textarea {
+      width: 100%;
+      box-sizing: border-box;
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+    }
+    #miss-li-codec-container button {
+      background-color: #558ed5;
+    }
+    #custom-dictionary-inputs button {
+      margin-left: 5px;
+      padding: 3px 6px;
+      border: none;
+      background-color: #e9675e;
+    }
+    hr {
+      border-top: 1px solid #555;
+    }
+  }
+&lt;&#x2F;style&gt;
+&lt;script&gt;
+  &#x2F;&#x2F; Re-run setup on checkbox change to update the base display
+  document
+    .querySelectorAll(&#x27;#dictionary-selection input[type=&quot;checkbox&quot;]&#x27;)
+    .forEach((checkbox) =&gt; {
+      checkbox.addEventListener(&quot;change&quot;, updateBaseDisplay);
+    });
+
+  updateBaseDisplay();
+&lt;&#x2F;script&gt;
+</description>
+      </item>
+      <item>
+          <title>Military Training Survival Guide</title>
+          <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+          <author>Fey Xie</author>
+          <link>https://ujhhgtg.github.io/articles/military-training-survival-guide/</link>
+          <guid>https://ujhhgtg.github.io/articles/military-training-survival-guide/</guid>
+          <description xml:base="https://ujhhgtg.github.io/articles/military-training-survival-guide/">&lt;blockquote class=&quot;markdown-alert-tip&quot;&gt;
+	&lt;p&gt;This guide will be continuously updated. Feel free to check back at any time for new content.&lt;&#x2F;p&gt;
+
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;skipping&quot;&gt;Skipping&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Students with cardiovascular or respiratory diseases can &lt;strong&gt;voluntarily&lt;&#x2F;strong&gt; choose not to participate. However, I personally recommend that you stick with it, as if you don’t participate this year, you will have to attend the make-up training next year. Continuous failure to complete the training will prevent graduation. If you do participate, the teachers and instructors will allow you to sit on the sidelines and rest for the duration of others’ activities, which is quite relaxing.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Students who seriously violate discipline may be sent home (one student in the author’s batch was). Being sent home at any time is considered incomplete training, requiring make-up training the following year.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;If a student goes home due to illness after the training activity has exceeded half of the total duration (after noon on the 3rd day), the training is considered complete, and no make-up is required.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;dormitories&quot;&gt;Dormitories&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;All dormitories use bunk beds (upper and lower berths). The rooms only have beds; there are no tables or chairs.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Most dorms house around 16 people, while a few house 4.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Dormitories have air conditioning vents but no host unit. To adjust the AC, you must contact the housing supervisor.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Roommates are assigned by the class teacher, but bed positions are chosen and assigned by the students upon arrival.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;The air conditioner may blow directly onto 1-2 beds. If you are sensitive to cold, it is recommended to choose a bed position far from the AC or contact the supervisor to adjust the AC.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;There is one teacher’s dormitory on each floor, so be mindful.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Each person is provided with a folding stool in the dorm. You need to carry it for most activities (the instructor will remind you beforehand).&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;There is either no desk in the dorm or only one small table for miscellaneous items, so don’t plan on doing homework.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;There are only 1-2 power outlets in the room. Bring your own power bank and extension cord.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;dorm-inspection&quot;&gt;Dorm Inspection&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Male dormitories are inspected by instructors and school teachers. Female dormitories are inspected by female school teachers.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;daytime-inspection&quot;&gt;Daytime Inspection&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Inspections are usually conducted by the instructor and a few students. Therefore, the inspecting students might try to cover up any point deductions they find.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Inspection times are usually around 6:30 or 8:20 AM. (The author is slightly fuzzy on the exact timing.)&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;nighttime-inspection&quot;&gt;Nighttime Inspection&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Lights out is at 10:00 PM (22:00).&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;The room must remain quiet after lights out.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;You and your roommates need to turn off the room lights yourselves. The lights in the corridor outside the dormitories will not be turned off, so you don’t need to worry too much about the light from electronic devices during inspection.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Inspection personnel will conduct the first check (opening the door) between 10:00 PM and 10:30 PM. They will then switch to patrol, conducting a second door check between 11:00 PM and 11:30 PM. It is generally safe after 12:00 AM. Case study: A class from a certain middle school had one phone per person and partied in the dorm after midnight.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;The instructors only check for quietness and will not deliberately check for contraband. School teachers, however, might.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;If noise is detected during the first door check, a warning is usually issued once. If noise is detected during patrol, the entire dorm may be asked to stand in the corridor for about 10 minutes for reprimanding. The reprimand is usually very loud, so it is suggested that if one dorm is being reprimanded, other dorms on the same floor can open their doors and complain about the instructor.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;meals-food&quot;&gt;Meals &#x2F; Food&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The food is similar to what you would get at school.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Food is served by the cafeteria staff, it is not a self-service buffet.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Lunch and dinner include a snack, which is yogurt or fruit (it was bananas and oranges during the author’s training). Yogurt is distributed by staff, but fruit is placed in a basin for self-service, so you can secretly take an extra piece; they generally don’t care.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;showering&quot;&gt;Showering&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Although there is a shower room in the dorm, it is a privilege reserved for the teacher’s room. Thus, you must go to the public bathhouse located beneath the cafeteria (yes, underground) to shower.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;The bathhouse has stalls but no doors.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;The bathhouse has lockers but no locks, so it is not recommended to bring valuables.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;The changing area is very narrow, making it easy to get sweat on you right after showering from others, or to start sweating profusely again due to the heat.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;There are many insects in the bathhouse.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;The ceiling in the female bathhouse once collapsed (no one was injured).&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;The author personally strongly advises against showering in the bathhouse. Wiping yourself down with wet wipes is much more comfortable than showering there, plus you have to put dirty clothes back on afterward (see below).&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;uniform&quot;&gt;Uniform&lt;&#x2F;h2&gt;
+&lt;blockquote class=&quot;markdown-alert-tip&quot;&gt;
+	&lt;p&gt;The content in this section is based on the author’s experience during their military training. Clothing requirements may change due to weather, so please refer to the actual situation during your session.&lt;&#x2F;p&gt;
+
+&lt;&#x2F;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The uniform consists of camouflage fatigues and a camouflage hat. School uniform may be required for evening activities.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;The pants are very loose and require a belt.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;A total of two sets of tops and bottoms are issued: The first top is a short-sleeve, issued on Day 1 and collected on Day 3. The second top is a long-sleeve (it’s very hot, so you can roll up the sleeves), issued on Day 3 and collected on Day 5.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Hats are issued on Day 1 and collected on Day 5. If lost, you need to purchase a replacement at the tuck shop for ¥30&#x2F;piece.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;There are no facilities for washing clothes, so each set of clothing must be worn for about 2.5 days.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;tuck-shop&quot;&gt;Tuck Shop&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Price List (feel free to add more):&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;    | Item | Price (¥) | Specification |
+    | — | —: | — |
+    | Potato Chips | 5 | Small bag |
+    | Oreo | 7 | Box (2 packs) |
+    | Kangshifu Instant Noodles | 5 | Cup |
+    | Qiehuang Instant Noodles | 6 | Cup |
+    | Tangdaren Instant Noodles | 9 | Cup |
+    | Camouflage Hat (Only if lost) | 30 | Piece |
+    | Cornetto Ice Cream | 5 | Cone |
+    | Taiyaki Ice Cream | 10 | Piece |
+    | Bottled Water | 2 | Bottle |
+    | Iced Tea | 4 | Bottle |
+    | Grilled Sausage | 4 | Piece |
+    | Soft Serve Ice Cream | 10 | Cone |
+    | Napkins | 4 | Large Pack |&lt;&#x2F;p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;The tuck shop has a vending machine and a manned counter. Try to avoid paying with paper money in the vending machine, as it will dispense a large number of coins in change.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Instant noodles are not allowed to be consumed inside the dormitories but can be eaten in the corridor and outside the dorm.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;electronic-devices&quot;&gt;Electronic Devices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Whether electronic devices are permitted is determined by the school, not Dongfang Green Boat. Instructors will not confiscate your devices inside the dormitory.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;training-content&quot;&gt;Training Content&lt;&#x2F;h2&gt;
+&lt;blockquote class=&quot;markdown-alert-tip&quot;&gt;
+	&lt;p&gt;Multiple schools participate in the military training simultaneously. Mealtimes and activities are staggered, so the following times may not be perfectly accurate.&lt;&#x2F;p&gt;
+
+&lt;&#x2F;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;There is relatively little formation drilling; most activities are related to cooperation.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Daily training is divided into 4 segments: Morning (20 mins), Forenoon (To be supplemented), Afternoon (To be supplemented), and Evening (1 hour 30 mins, but often runs late).&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;At the end of assembly or training, schools or classes with poor discipline may be kept behind for individual reprimanding.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;marching-formation&quot;&gt;Marching Formation&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The marching time can be long. Students with flat feet should take note.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Talking is not allowed while marching, but the formation is not required to be perfectly neat.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Chanting slogans collectively may happen during marching; you can slack off a bit then.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;specialized-training&quot;&gt;Specialized Training&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Upon arrival at the military training site, 1-2 students pre-selected from each class will leave their squads and enter a specialized training camp. These students will form a separate company, train independently from their class for the entire duration, and stay in separate dormitories.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Students in specialized training will perform on stage during the evening literary and artistic performance on the 4th day.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;theater-activities&quot;&gt;Theater Activities&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Theater activities include watching films, literary and artistic performances, etc.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;The theater sound system is extremely loud. If you do not want to cover your ears the entire time while watching a film or performance, it is highly recommended to bring your own earplugs, as the volume may cause damage to your hearing.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;You can sleep in the theater, but it is usually too loud to fall asleep.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;watching-films&quot;&gt;Watching Films&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The official name of this activity is “Watching Patriotic Films”, so don’t expect the films to be particularly entertaining.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;The author watched “The Hundred Regiments Offensive”, which was very boring.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;more&quot;&gt;More&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;contact-me&quot;&gt;Contact Me&lt;&#x2F;h3&gt;
+&lt;blockquote class=&quot;markdown-alert-important&quot;&gt;
+	&lt;p&gt;It is normal if I am unreachable due to restrictions on my electronic devices and the fact that I am in a boarding high school.&lt;&#x2F;p&gt;
+
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;E-mail: &lt;a href=&quot;mailto:feyxiexzf@gmail.com&quot;&gt;feyxiexzf@gmail.com&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Telegram: &lt;a href=&quot;https:&#x2F;&#x2F;t.me&#x2F;Ujhhgtg&quot;&gt;@Ujhhgtg&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Discord: ujhhgtg&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;about-this-site&quot;&gt;About This Site&lt;&#x2F;h3&gt;
+&lt;p&gt;This webpage is generated by the static site generator &lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt;, using the &lt;a href=&quot;https:&#x2F;&#x2F;ametrine.daudix.one&#x2F;&quot;&gt;Ametrine&lt;&#x2F;a&gt; theme.&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>
