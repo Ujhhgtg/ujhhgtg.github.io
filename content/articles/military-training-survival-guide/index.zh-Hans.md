@@ -195,4 +195,4 @@ Discord: ujhhgtg
 
 ### 关于本站
 
-本网页由静态页面生成器 [Zola](https://www.getzola.org/) 生成，主题为 [Duckquill](https://codeberg.org/daudix/duckquill)。
+本网页由静态页面生成器 [Zola](https://www.getzola.org/) 生成，主题为 [Ametrine](https://ametrine.daudix.one/)。

@@ -217,7 +217,7 @@ function missLiDecode() {
   let inputText = inputElement.value;
 
   if (!inputText) {
-    outputElement.value = "Error: Input sequence is empty.";
+    outputElement.value = "Error: Input text is empty.";
     return;
   }
 

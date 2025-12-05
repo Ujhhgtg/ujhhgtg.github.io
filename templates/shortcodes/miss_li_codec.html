@@ -75,46 +75,65 @@
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Light background */
+    color: #1a1a1a; /* Dark text */
   }
-  #miss-li-codec-container textarea {
+  #miss-li-codec-container textarea,
+  #custom-dictionary-inputs input[type="text"] {
     width: 100%;
     box-sizing: border-box;
     margin-top: 5px;
     margin-bottom: 10px;
+    border: 1px solid #ccc;
+    background-color: white; /* White input background */
+    color: #1a1a1a;
   }
   #miss-li-codec-container button {
     padding: 8px 15px;
     margin-right: 10px;
     cursor: pointer;
-    background-color: #007bff;
+    background-color: #007bff; /* Primary blue button */
     color: white;
     border: none;
     border-radius: 4px;
   }
-  #dictionary-selection label {
-    margin-right: 15px;
+  #custom-dictionary-inputs button {
+    background-color: #f44336; /* Remove button red */
   }
-  .custom-word-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
+  hr {
+    border-top: 1px solid #ddd;
   }
-  .custom-word-item input[type="text"] {
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 3px;
-    border: 1px solid #ccc;
-    width: 150px;
-  }
-  .custom-word-item button {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 3px 6px;
-    font-size: 0.8em;
-    cursor: pointer;
-    margin-left: 5px;
+
+  /* --- 2. DARK THEME STYLES (Overrides) --- */
+  @media (prefers-color-scheme: dark) {
+    #miss-li-codec-container {
+      /* Darker container background */
+      background-color: #2c2c2c;
+      /* Lighter text */
+      color: #e0e0e0;
+      /* Border contrast */
+      border-color: #444;
+    }
+    #miss-li-codec-container textarea,
+    #custom-dictionary-inputs input[type="text"] {
+      /* Very dark input background */
+      background-color: #1e1e1e;
+      /* Light text */
+      color: #f0f0f0;
+      /* Input border contrast */
+      border-color: #555;
+    }
+    #miss-li-codec-container button {
+      /* Adjusted button color for dark theme */
+      background-color: #558ed5;
+    }
+    #custom-dictionary-inputs button {
+      /* Adjusted remove button red for dark theme */
+      background-color: #e9675e;
+    }
+    hr {
+      border-top: 1px solid #555;
+    }
   }
 </style>
 <script>

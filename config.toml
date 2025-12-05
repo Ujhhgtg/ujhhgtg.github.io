@@ -1,13 +1,16 @@
+title = "Ujhhgtg's Site"
+author = "Fey Xie"
 base_url = "https://ujhhgtg.github.io/"
 compile_sass = true
 build_search_index = true
-title = "Ujhhgtg's Site"
 theme = "ametrine"
-author = "Fey Xie"
 generate_feeds = true
 feed_filenames = ["rss.xml", "atom.xml"]
 default_language = "en"
-taxonomies = [{ name = "tags", feed = true }]
+taxonomies = [{ name = "tags", feed = true, paginate_by = 10 }]
+
+[search]
+index_format = "elasticlunr_json"
 
 [markdown]
 highlight_code = true
@@ -21,6 +24,7 @@ bottom_footnotes = true
 github_alerts = true
 
 [extra]
+accent_color = ["purple", "orange"]
 source_url = "https://github.com/Ujhhgtg/ujhhgtg.github.io/"
 issues_url = "https://github.com/Ujhhgtg/ujhhgtg.github.io/issues"
 show_copy_button = true
@@ -31,14 +35,14 @@ show_feed = true
 show_theme_switcher = true
 show_repo = true
 links = [
-    { name = "Home", url = "/" },
-    { name = "Articles", url = "/articles/" },
-    { name = "Issues", url = "https://github.com/Ujhhgtg/ujhhgtg.github.io/issues" },
+    { name = "Articles", url = "/articles/", icon = "newspaper" },
+    { name = "Issues", url = "https://github.com/Ujhhgtg/ujhhgtg.github.io/issues", icon = "question" },
 ]
-zh-Hans.links = [
-    { name = "首页", url = "/" },
-    { name = "文章", url = "/articles/" },
-    { name = "问题", url = "https://github.com/Ujhhgtg/ujhhgtg.github.io/issues" },
+
+[extra.nav.zh-Hans]
+links = [
+    { name = "文章", url = "/articles/", icon = "newspaper" },
+    { name = "问题", url = "https://github.com/Ujhhgtg/ujhhgtg.github.io/issues", icon = "question" },
 ]
 
 [extra.footer]
@@ -49,5 +53,5 @@ show_source = true
 
 [languages.zh-Hans]
 title = "Ujhhgtg 的网站"
-taxonomies = [{ name = "tags", feed = true }]
+taxonomies = [{ name = "tags", feed = true, paginate_by = 10 }]
 feed_filenames = ["rss.xml", "atom.xml"]
