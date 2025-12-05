@@ -1,0 +1,7 @@
+language_name = "简体中文"
+date_format = "%Y 年 %m 月 %d 日"
+date_locale = "zh_CN"
+
+Home = "首页"
+Articles = "文章"
+Issues = "问题"

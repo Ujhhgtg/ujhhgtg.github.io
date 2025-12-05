@@ -5,6 +5,6 @@ toc = false
 +++
 
 
-# Ujhhgtg's Site
+# Ujhhgtg 的网站
 
-Welcome to my simple website!
+欢迎来到我的网站！

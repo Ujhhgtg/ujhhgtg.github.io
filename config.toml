@@ -1,18 +1,28 @@
-base_url = "https://ujhhgtg.github.io/military-training-survival-guide/"
+base_url = "https://ujhhgtg.github.io/"
 compile_sass = true
-build_search_index = false
-theme = "duckquill"
-title = "东方绿舟军训生存指南"
+build_search_index = true
+title = "Ujhhgtg's Site"
+theme = "ametrine"
 author = "Fey Xie"
 generate_feeds = true
 feed_filenames = ["rss.xml", "atom.xml"]
+default_language = "en"
+taxonomies = [{ name = "tags", feed = true }]
 
 [markdown]
 highlight_code = true
+highlight_theme = "css"
+highlight_themes_css = [
+    { theme = "solarized-dark", filename = "syntax-theme-dark.css" },
+    { theme = "solarized-light", filename = "syntax-theme-light.css" },
+]
+smart_punctuation = true
+bottom_footnotes = true
+github_alerts = true
 
 [extra]
-source_url = "https://github.com/Ujhhgtg/military-training-survival-guide/"
-issues_url = "https://github.com/Ujhhgtg/military-training-survival-guide/issues"
+source_url = "https://github.com/Ujhhgtg/ujhhgtg.github.io/"
+issues_url = "https://github.com/Ujhhgtg/ujhhgtg.github.io/issues"
 show_copy_button = true
 bundled_fonts = true
 
@@ -22,10 +32,22 @@ show_theme_switcher = true
 show_repo = true
 links = [
     { name = "Home", url = "/" },
-    { name = "Issues", url = "https://github.com/Ujhhgtg/military-training-survival-guide/issues" },
+    { name = "Articles", url = "/articles/" },
+    { name = "Issues", url = "https://github.com/Ujhhgtg/ujhhgtg.github.io/issues" },
+]
+zh-Hans.links = [
+    { name = "首页", url = "/" },
+    { name = "文章", url = "/articles/" },
+    { name = "问题", url = "https://github.com/Ujhhgtg/ujhhgtg.github.io/issues" },
 ]
 
 [extra.footer]
 show_copyright = true
 show_powered_by = true
 show_source = true
+
+
+[languages.zh-Hans]
+title = "Ujhhgtg 的网站"
+taxonomies = [{ name = "tags", feed = true }]
+feed_filenames = ["rss.xml", "atom.xml"]
