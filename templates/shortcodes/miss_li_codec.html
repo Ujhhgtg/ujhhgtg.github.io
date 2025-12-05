@@ -46,13 +46,11 @@
     </p>
   </div>
 
-  <hr style="border-top: 1px solid #ddd" />
-
   <p><strong for="miss-li-input">2. Input 输入:</strong></p>
   <textarea
     id="miss-li-input"
     rows="5"
-    placeholder="Enter text to encode (e.g., 'Hello') or word sequence to decode. 输入要编码的文本 (例如 'Hello') 或要解码的词语序列。"
+    placeholder="Enter text to encode (e.g., 'Hello') or word sequence to decode. 输入要编码的文本 (例如 'Hello') 或要解码的词语序列."
   ></textarea>
 
   <div style="margin-top: 10px; margin-bottom: 10px">
@@ -77,60 +75,61 @@
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9; /* Light background */
-    color: #1a1a1a; /* Dark text */
+    background-color: #f9f9f9;
+    color: #1a1a1a;
   }
-  #miss-li-codec-container textarea,
   #custom-dictionary-inputs input[type="text"] {
+    width: 75%;
+    box-sizing: border-box;
+    background-color: white;
+    color: #1a1a1a;
+  }
+  #miss-li-codec-container textarea {
     width: 100%;
     box-sizing: border-box;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    background-color: white; /* White input background */
+    background-color: white;
     color: #1a1a1a;
   }
   #miss-li-codec-container button {
     padding: 8px 15px;
     margin-right: 10px;
-    cursor: pointer;
-    background-color: #007bff; /* Primary blue button */
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 4px;
   }
   #custom-dictionary-inputs button {
-    background-color: #f44336; /* Remove button red */
-  }
-  hr {
-    border-top: 1px solid #ddd;
+    margin-left: 5px;
+    padding: 3px 6px;
+    border: none;
+    background-color: #f44336;
   }
 
-  /* --- 2. DARK THEME STYLES (Overrides) --- */
   @media (prefers-color-scheme: dark) {
     #miss-li-codec-container {
-      /* Darker container background */
       background-color: #2c2c2c;
-      /* Lighter text */
       color: #e0e0e0;
-      /* Border contrast */
       border-color: #444;
     }
-    #miss-li-codec-container textarea,
     #custom-dictionary-inputs input[type="text"] {
-      /* Very dark input background */
+      width: 75%;
+      box-sizing: border-box;
       background-color: #1e1e1e;
-      /* Light text */
       color: #f0f0f0;
-      /* Input border contrast */
-      border-color: #555;
+    }
+    #miss-li-codec-container textarea {
+      width: 100%;
+      box-sizing: border-box;
+      background-color: #1e1e1e;
+      color: #f0f0f0;
     }
     #miss-li-codec-container button {
-      /* Adjusted button color for dark theme */
       background-color: #558ed5;
     }
     #custom-dictionary-inputs button {
-      /* Adjusted remove button red for dark theme */
+      margin-left: 5px;
+      padding: 3px 6px;
+      border: none;
       background-color: #e9675e;
     }
     hr {
