@@ -168,7 +168,7 @@ function missLiEncode() {
 
   if (base < 2) {
     outputElement.value =
-      "Error: Please select or enter at least two dictionary words (Base 2 or higher) to encode.";
+      "Error: Please select or enter at least two dictionary words (Base 2 or higher) to encode.\n错误: 请至少选择或输入两个字典词语 (2 进制或更高) 以进行编码.";
     return;
   }
 
@@ -176,7 +176,7 @@ function missLiEncode() {
   const inputText = inputElement.value;
 
   if (!inputText) {
-    outputElement.value = "Error: Input text is empty.";
+    outputElement.value = "Error: Input text is empty.\n错误: 输入文本为空。";
     return;
   }
 
@@ -209,7 +209,7 @@ function missLiDecode() {
 
   if (base < 2) {
     outputElement.value =
-      "Error: Please select or enter at least two dictionary words (Base 2 or higher) to decode.";
+      "Error: Please select or enter at least two dictionary words (Base 2 or higher) to decode.\n错误: 请至少选择或输入两个字典词语 (2 进制或更高) 以进行解码.";
     return;
   }
 
@@ -217,7 +217,7 @@ function missLiDecode() {
   let inputText = inputElement.value;
 
   if (!inputText) {
-    outputElement.value = "Error: Input text is empty.";
+    outputElement.value = "Error: Input text is empty.\n错误: 输入文本为空。";
     return;
   }
 
@@ -247,6 +247,8 @@ function missLiDecode() {
     outputElement.value =
       "Decoding Error: " +
       e.message +
-      " Check your input and dictionary and try again.";
+      " Check your input and dictionary and try again.\n解码错误: " +
+      e.message +
+      "请检查您的输入和字典，然后重试。";
   }
 }

@@ -1,8 +1,8 @@
 <div id="miss-li-codec-container">
-  <h2>Ms. Li Codec</h2>
+  <h2>Ms. Li Codec | Ms. Li 编解码器</h2>
 
   <div style="margin-bottom: 15px">
-    <p><strong>1. Select Dictionary Words (Base):</strong></p>
+    <p><strong>1. Select Dictionary Words (Base) 选择字典词语 (进制):</strong></p>
     <div id="dictionary-selection">
       <label
         ><input type="checkbox" name="dict-word" value="redo" checked />
@@ -35,22 +35,22 @@
         onclick="addCustomWordInput()"
         style="padding: 5px 10px; font-size: 0.9em; margin-top: 5px"
       >
-        + Add Custom Word
+        + Add Custom Word 添加自定义词语
       </button>
     </div>
 
     <p style="margin-top: 5px; font-size: 0.9em">
-      Selected Base: <strong id="current-base">2 (Binary)</strong>
+      Selected Base | 已选中的进制: <strong id="current-base">2</strong>
     </p>
   </div>
 
   <hr style="border-top: 1px solid #ddd" />
 
-  <p><strong for="miss-li-input">2. Input:</strong></p>
+  <p><strong for="miss-li-input">2. Input 输入:</strong></p>
   <textarea
     id="miss-li-input"
     rows="5"
-    placeholder="Enter text to encode (e.g., 'Hello') or word sequence to decode."
+    placeholder="Enter text to encode (e.g., 'Hello') or word sequence to decode. 输入要编码的文本 (例如 'Hello') 或要解码的词语序列。"
   ></textarea>
 
   <div style="margin-top: 10px; margin-bottom: 10px">
@@ -58,13 +58,13 @@
     <button onclick="missLiDecode()">Decode</button>
   </div>
 
-  <p><strong for="miss-li-output">3. Output:</strong></p>
+  <p><strong for="miss-li-output">3. Output 输出:</strong></p>
 
   <textarea
     id="miss-li-output"
     rows="5"
     readonly
-    placeholder="Result will appear here"
+    placeholder="Result will appear here 结果将在此显示"
   ></textarea>
 </div>
 
